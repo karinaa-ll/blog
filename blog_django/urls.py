@@ -13,6 +13,8 @@ urlpatterns = [
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
     path('post/<int:pk>/delete/', views.post_delete, name='post_delete'),
     path('search/', views.post_search, name='post_search'),
+
+    # Добавляем маршрут для страницы с подробностями о посте
     path('post/<int:pk>/', views.post_detail, name='post_detail'),
 
     # Главная страница (например, список постов)
@@ -22,3 +24,4 @@ urlpatterns = [
 # Для обработки медиафайлов (включая изображения)
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

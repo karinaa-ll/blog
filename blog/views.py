@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
+from .models import Post
 from .forms import PostForm
 from django.db.models import Q
 from django.contrib.auth import authenticate, login, logout
@@ -117,6 +118,7 @@ def post_search(request):
         posts = Post.objects.all()
     return render(request, 'post_list.html', {'posts': posts})
 
+
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/post_detail.html', {'post': post})
+    return render(request, 'post_detail.html', {'post': post})

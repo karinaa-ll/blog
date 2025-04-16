@@ -37,7 +37,7 @@ body.dark-theme {
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px; /* Задаем ширину на весь экран */
+    width: 79px; 
     height: 100vh;
     background-color: #ffffff;
     padding: 30px 20px;
@@ -127,71 +127,112 @@ body.dark-theme .theme-toggle:hover {
 
 /* Посты */
 .post-list {
-    margin-top: 20px;
-}
-
-.post {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-body.dark-theme .post {
-    background-color: #333;
-    border-color: #444;
-}
-
-.post h2 {
-    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .post-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .post-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Заголовок и информация о посте */
+  .post-header {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .post-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .post-info {
+    flex: 1;
+  }
+  
+  .post-title {
+    font-size: 1.2em;
+    font-weight: bold;
     color: #333;
-    margin-bottom: 10px;
-}
-
-body.dark-theme .post h2 {
-    color: #F9F9F9;
-}
-
-.post .meta {
-    font-size: 0.9rem;
-    color: #777;
-    margin-bottom: 10px;
-}
-
-body.dark-theme .post .meta {
-    color: #bbb;
-}
-
-.post p {
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-body.dark-theme .post p {
-    color: #ccc;
-}
-
-.post .btn {
-    display: inline-block;
-    padding: 8px 15px;
-    margin-top: 10px;
-    background-color: #007bff;
-    color: white;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-}
-
-body.dark-theme .post .btn {
-    background-color: #007bff;
-}
-
-.post .btn:hover {
-    background-color: #0056b3;
-}
-
+  }
+  
+  .post-title:hover {
+    color: #007bff;
+  }
+  
+  .post-author {
+    font-size: 0.9em;
+    color: #555;
+    margin-top: 4px;
+  }
+  
+  /* Контент поста */
+  .post-content {
+    font-size: 1em;
+    color: #444;
+    margin-bottom: 12px;
+  }
+  
+  /* Дата, категории и теги */
+  .post-footer {
+    font-size: 0.85em;
+    color: #777;
+  }
+  
+  .post-date {
+    margin-bottom: 8px;
+  }
+  
+  .post-categories,
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .post-category,
+  .post-tag {
+    background-color: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 16px;
+    font-size: 0.85em;
+  }
+  
+  .post-category:hover,
+  .post-tag:hover {
+    background-color: #e2e2e2;
+  }
+  
+  /* Действия с постом */
+  .post-actions {
+    margin-top: 12px;
+    font-size: 0.85em;
+    color: #007bff;
+  }
+  
+  .post-action {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .post-action:hover {
+    text-decoration: underline;
+  }
 /* Форма */
 form {
     background-color: #fff;

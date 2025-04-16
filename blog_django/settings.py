@@ -119,5 +119,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Настройки для работы с медиафайлами
 
-MEDIA_URL = '/media/'  # URL для доступа к медиафайлам
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Путь для хранения медиафайлов на сервере
+MEDIA_URL = '/media/' 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
