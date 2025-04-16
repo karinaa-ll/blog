@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Blog{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="{% if request.COOKIES.theme == 'dark' %}dark-theme{% else %}light-theme{% endif %}">
+
+<div class="main-layout">
+    <aside class="sidebar">
+        <a href="/" class="logo">YB</a>
+
+        <nav class="sidebar">
+            <a href="/" class="logo">📝</a>
+            <div class="nav-links">
+                <a href="/" class="nav-link" title="Главная">🏠</a>
+                <a href="/post/new/" class="nav-link" title="Создать пост">➕</a>
+                <a href="/search/" class="nav-link" title="Поиск">🔍</a>
+            </div>
+            <div class="user-links">
+                {% if user.is_authenticated %}
+                    <a href="/logout/" class="nav-link" title="Выйти">🚪</a>
+                {% else %}
+                    <a href="/login/" class="nav-link" title="Войти">🔑</a>
+                    <a href="/signup/" class="nav-link" title="Регистрация">📝</a>
+                {% endif %}
+            </div>
+            <button class="theme-toggle" id="theme-toggle" title="Переключить тему">🌙</button>
+        </nav>
+
+    </aside>
+
+    <!-- Контент -->
+    <main class="content-area">
+        {% block content %}
+        {% endblock %}
+    </main>
+</div>
+
+<footer>
+    <p>&copy; 2025 Мой блог</p>
+</footer>
+
+<!-- Подключение скриптов -->
+<script>
+    lucide.createIcons();
+</script>
+<script src="{% static 'script.js' %}"></script>
+</body>
+</html>

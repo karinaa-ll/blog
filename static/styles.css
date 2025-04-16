@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F9F9F9;
+    color: #333;
+    line-height: 1.5;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Темы */
+body.light-theme {
+    background-color: #F9F9F9;
+    color: #333;
+}
+
+body.dark-theme {
+    background-color: #121212;
+    color: #F9F9F9;
+}
+
+/* Основная сетка */
+.main-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Левая боковая панель */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px; /* Задаем ширину на весь экран */
+    height: 100vh;
+    background-color: #ffffff;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Темная тема для сайдбара */
+body.dark-theme .sidebar {
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+/* Логотип в сайдбаре */
+.sidebar .logo {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: inherit;
+    font-weight: bold;
+}
+
+/* Навигационные ссылки */
+.nav-links, .user-links {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-link {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: inherit;
+    padding: 12px;
+    border-radius: 12px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Кнопка переключения темы */
+.theme-toggle {
+    margin-top: auto;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    transition: transform 0.2s;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+body.dark-theme .theme-toggle {
+    color: #ccc;
+}
+
+body.dark-theme .theme-toggle:hover {
+    color: #fff;
+}
+
+/* Контейнер с контентом */
+.container {
+    margin-left: 250px; /* Отступ от сайдбара */
+    padding: 30px;
+}
+
+/* Контентная область */
+.content-area {
+    flex: 1;
+    margin-left: 80px;
+    padding: 20px;
+    max-width: 900px;
+}
+
+/* Посты */
+.post-list {
+    margin-top: 20px;
+}
+
+.post {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+body.dark-theme .post {
+    background-color: #333;
+    border-color: #444;
+}
+
+.post h2 {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+body.dark-theme .post h2 {
+    color: #F9F9F9;
+}
+
+.post .meta {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+body.dark-theme .post .meta {
+    color: #bbb;
+}
+
+.post p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+body.dark-theme .post p {
+    color: #ccc;
+}
+
+.post .btn {
+    display: inline-block;
+    padding: 8px 15px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+body.dark-theme .post .btn {
+    background-color: #007bff;
+}
+
+.post .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Форма */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+body.dark-theme form {
+    background-color: #333;
+    color: #F9F9F9;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+body.dark-theme form input,
+body.dark-theme form textarea,
+body.dark-theme form select {
+    background-color: #444;
+    color: #F9F9F9;
+    border-color: #555;
+}
+
+form button {
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+/* Футер */
+footer {
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+}
+
+body.dark-theme footer {
+    background-color: #333;
+    color: #F9F9F9;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .main-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .content-area {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .sidebar-nav {
+        flex-direction: row;
+        gap: 15px;
+        flex-grow: 0;
+    }
+
+    .theme-toggle {
+        margin-left: auto;
+    }
+}
